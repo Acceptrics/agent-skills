@@ -13,14 +13,16 @@
         "domain": ".shop-example.com",
         "category": "analytics",
         "platform": "Google Analytics",
-        "description": "ID used to identify users"
+        "description": "ID used to identify users",
+        "unrecognised": false
       },
       {
         "name": "PHPSESSID",
         "domain": "shop-example.com",
-        "category": null,
+        "category": "functional",
         "platform": null,
-        "description": null
+        "description": null,
+        "unrecognised": true
       }
     ]
   }

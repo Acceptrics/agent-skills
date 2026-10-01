@@ -16,35 +16,40 @@
         "domain": ".shop-example.com",
         "category": "analytics",
         "platform": "Google Analytics",
-        "description": "ID used to identify users"
+        "description": "ID used to identify users",
+        "unrecognised": false
       },
       {
         "name": "_gcl_au",
         "domain": ".shop-example.com",
         "category": "marketing",
         "platform": "Google",
-        "description": "Conversion linker"
+        "description": "Conversion linker",
+        "unrecognised": false
       },
       {
         "name": "_ttp",
         "domain": ".shop-example.com",
         "category": "marketing",
         "platform": "TikTok",
-        "description": "Tracks visitors across sites"
+        "description": "Tracks visitors across sites",
+        "unrecognised": false
       },
       {
         "name": "_fbp",
         "domain": ".shop-example.com",
-        "category": null,
+        "category": "functional",
         "platform": null,
-        "description": null
+        "description": null,
+        "unrecognised": true
       },
       {
         "name": "__cf_bm",
         "domain": ".shop-example.com",
         "category": "functional",
         "platform": "Cloudflare",
-        "description": "Bot management"
+        "description": "Bot management",
+        "unrecognised": false
       }
     ]
   }

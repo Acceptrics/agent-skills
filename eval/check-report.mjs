@@ -55,9 +55,18 @@ export function checkReport(report, fixture) {
         failures.push(`missing cookie row: ${c.name}`);
       }
     }
-    if (cookies.some((c) => c.category === null) && !/unrecognised/i.test(text)) {
-      failures.push('missing: the "Unrecognised cookies" note');
+    // Unrecognised cookies are reported as functional and must be FLAGGED by
+    // name, so the owner checks what sets them.
+    const unrecognised = cookies.filter((c) => c.unrecognised);
+    const flag = text.search(/check these cookies/i);
+    if (unrecognised.length && flag < 0) {
+      failures.push('missing: the "Check these cookies" flag for unrecognised cookies');
+    } else {
+      for (const c of unrecognised) {
+        if (!text.slice(flag).includes(c.name)) failures.push(`flag does not name unrecognised cookie: ${c.name}`);
+      }
     }
+    if (!unrecognised.length && flag >= 0) failures.push('flags cookies to check when none are unrecognised');
     const tracking = cookies.filter((c) => c.category === 'analytics' || c.category === 'marketing').length;
     if (!new RegExp(`\\b${tracking}\\b`).test(text)) {
       failures.push(`missing: the count of analytics/marketing cookies (${tracking})`);

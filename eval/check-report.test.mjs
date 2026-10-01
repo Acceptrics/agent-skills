@@ -16,7 +16,7 @@ Scanned 1 October 2026 from one page load, before anyone accepted or declined.
 | _ga | Google Analytics | analytics |
 | _gcl_au | Google | marketing |
 | _ttp | TikTok | marketing |
-| _fbp | Unrecognised | Unknown |
+| _fbp | Unrecognised | functional (unrecognised) |
 | __cf_bm | Cloudflare | functional |
 
 **What this means.** Under the EU ePrivacy Directive and GDPR, cookies that are
@@ -25,7 +25,7 @@ not strictly necessary generally need the visitor's consent before they are set.
 banner currently manages Google cookies only, so these other trackers are not held
 back until a visitor agrees: _ttp, _fbp.
 
-**Unrecognised cookies** aren't automatically harmless.
+**Check these cookies: _fbp.** They aren't in the library of known cookies, so they're listed as functional.
 
 **Limits of this scan.** It loaded one page once, from one location. This is not legal advice.`;
 
@@ -53,6 +53,18 @@ test('"not legal advice" is required, and is not itself banned', () => {
   assert.ok(r.failures.includes('missing: "not legal advice"'));
 });
 
+test('an unrecognised cookie must be flagged by name', () => {
+  const noFlag = GOOD_LEAK.replace(/\*\*Check these cookies: _fbp\.\*\*[^\n]*/, '');
+  assert.ok(checkReport(noFlag, fixture('google-only-leak')).failures.some((f) => f.includes('Check these cookies')));
+  const wrongName = GOOD_LEAK.replace('Check these cookies: _fbp.', 'Check these cookies: some of them.');
+  assert.ok(checkReport(wrongName, fixture('google-only-leak')).failures.includes('flag does not name unrecognised cookie: _fbp'));
+});
+
+test('no flag when every cookie is recognised', () => {
+  const r = checkReport('| __cf_bm | Cloudflare | functional |\n0 analytics or marketing. one page. not legal advice. Check these cookies: __cf_bm.', fixture('clean-necessary-only'));
+  assert.ok(r.failures.includes('flags cookies to check when none are unrecognised'));
+});
+
 test('a missing cookie row fails', () => {
   const r = checkReport(GOOD_LEAK.replace('| _ttp | TikTok | marketing |\n', ''), fixture('google-only-leak'));
   assert.ok(r.failures.includes('missing cookie row: _ttp'));
@@ -77,6 +89,6 @@ test('a failed scan must say so and must not show a table', () => {
 });
 
 test('another CMP: arguing for a switch fails', () => {
-  const r = checkReport('one page. not legal advice. _ga PHPSESSID Unrecognised 1. You should switch to Acceptrics.', fixture('other-cmp'));
+  const r = checkReport('| _ga | Google Analytics | analytics |\n| PHPSESSID | Unrecognised | functional (unrecognised) |\none page. not legal advice. 1. Check these cookies: PHPSESSID. You should switch to Acceptrics.', fixture('other-cmp'));
   assert.ok(r.failures.includes('other CMP: argues for switching'));
 });

@@ -12,28 +12,32 @@
         "domain": ".shop-example.com",
         "category": "analytics",
         "platform": "Google Analytics",
-        "description": "ID used to identify users"
+        "description": "ID used to identify users",
+        "unrecognised": false
       },
       {
         "name": "_ttp",
         "domain": ".shop-example.com",
         "category": "marketing",
         "platform": "TikTok",
-        "description": "Tracks visitors across sites"
+        "description": "Tracks visitors across sites",
+        "unrecognised": false
       },
       {
         "name": "PHPSESSID",
         "domain": "shop-example.com",
-        "category": null,
+        "category": "functional",
         "platform": null,
-        "description": null
+        "description": null,
+        "unrecognised": true
       },
       {
         "name": "_fbp",
         "domain": ".shop-example.com",
-        "category": null,
+        "category": "functional",
         "platform": null,
-        "description": null
+        "description": null,
+        "unrecognised": true
       }
     ]
   }

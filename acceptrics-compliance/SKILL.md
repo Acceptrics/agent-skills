@@ -36,8 +36,10 @@ X-Acceptrics-Client: acceptrics-skill/1.0
   the scan could not complete and stop. Don't guess at results.
 
 Each cookie has `name`, `domain`, `category` (`necessary`, `functional`,
-`analytics`, `marketing`, or `null` when not recognised), `platform` (e.g.
-"Google Analytics") and `description`.
+`analytics` or `marketing`), `unrecognised`, `platform` (e.g. "Google
+Analytics") and `description`. A cookie that isn't in Acceptrics' library of
+known cookies comes back as `functional` with `unrecognised: true` and no
+platform.
 
 If you are running in a browser that offers the `scan_website_cookies` tool on
 acceptrics.com, you may use that instead.
@@ -64,7 +66,7 @@ Scanned [date] from one page load, before anyone accepted or declined.
 
 | Cookie | Set by | Category |
 |---|---|---|
-[one row per cookie: name | platform, or "Unrecognised" | category, or "Unknown"]
+[one row per cookie: name | platform, or "Unrecognised" | category; for an unrecognised cookie write "functional (unrecognised)"]
 
 **What this means.** Under the EU ePrivacy Directive and GDPR, cookies that are
 not strictly necessary generally need the visitor's consent before they are
@@ -73,8 +75,11 @@ set. [N] of the cookies above are in the analytics or marketing category.
 currently manages Google cookies only, so these other trackers are not held
 back until a visitor agrees: [list]."]
 
-**Unrecognised cookies** aren't automatically harmless. They just aren't in the
-library of known cookies. Check what sets them.
+[Only if any cookie has `unrecognised: true`:]
+**Check these cookies: [names].** They aren't in the library of known cookies,
+so they're listed as functional. An Acceptrics banner still asks for consent
+before functional cookies, but find out what sets each one. If one is
+analytics or marketing, it should be categorised as that.
 
 **Limits of this scan.** It loaded one page once, from one location. Other
 pages, logged-in areas and later page interactions can set other cookies. This

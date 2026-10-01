@@ -16,7 +16,8 @@
         "domain": ".shop-example.com",
         "category": "functional",
         "platform": "Cloudflare",
-        "description": "Bot management"
+        "description": "Bot management",
+        "unrecognised": false
       }
     ]
   }
