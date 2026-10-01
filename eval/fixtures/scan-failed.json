@@ -1,0 +1,12 @@
+{
+  "why": "scan failed twice",
+  "setup": {
+    "kind": "unknown"
+  },
+  "scan": {
+    "status": "failed",
+    "url": "https://slow-example.com/",
+    "error": "The scan did not finish. Try again.",
+    "attempts": 2
+  }
+}

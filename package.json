@@ -1,0 +1,14 @@
+{
+  "name": "acceptrics-agent-skills",
+  "private": true,
+  "type": "module",
+  "description": "Agent skills for Acceptrics cookie consent (SKILL.md) and the eval that guards their wording.",
+  "scripts": {
+    "test": "node --test eval/check-report.test.mjs",
+    "eval": "node eval/run-eval.mjs",
+    "eval:plan": "node eval/run-eval.mjs --dry-run"
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "latest"
+  }
+}

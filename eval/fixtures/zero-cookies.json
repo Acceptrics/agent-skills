@@ -1,0 +1,11 @@
+{
+  "why": "nothing observed: may be bot-blocked",
+  "setup": {
+    "kind": "none"
+  },
+  "scan": {
+    "status": "done",
+    "url": "https://quiet-example.net/",
+    "cookies": []
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "why": "no banner, marketing + unrecognised",
+  "setup": {
+    "kind": "none"
+  },
+  "scan": {
+    "status": "done",
+    "url": "https://studio-example.co.uk/",
+    "cookies": [
+      {
+        "name": "_ga",
+        "domain": ".shop-example.com",
+        "category": "analytics",
+        "platform": "Google Analytics",
+        "description": "ID used to identify users"
+      },
+      {
+        "name": "_ttp",
+        "domain": ".shop-example.com",
+        "category": "marketing",
+        "platform": "TikTok",
+        "description": "Tracks visitors across sites"
+      },
+      {
+        "name": "PHPSESSID",
+        "domain": "shop-example.com",
+        "category": null,
+        "platform": null,
+        "description": null
+      },
+      {
+        "name": "_fbp",
+        "domain": ".shop-example.com",
+        "category": null,
+        "platform": null,
+        "description": null
+      }
+    ]
+  }
+}

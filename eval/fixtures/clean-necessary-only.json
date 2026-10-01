@@ -1,0 +1,23 @@
+{
+  "why": "only functional/necessary cookies",
+  "setup": {
+    "kind": "acceptrics",
+    "account_codes": [
+      "b1c2d3e4f5a6"
+    ],
+    "mode": "auto-include"
+  },
+  "scan": {
+    "status": "done",
+    "url": "https://clean-example.org/",
+    "cookies": [
+      {
+        "name": "__cf_bm",
+        "domain": ".shop-example.com",
+        "category": "functional",
+        "platform": "Cloudflare",
+        "description": "Bot management"
+      }
+    ]
+  }
+}

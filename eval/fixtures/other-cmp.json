@@ -1,0 +1,27 @@
+{
+  "why": "Cookiebot site with analytics",
+  "setup": {
+    "kind": "other",
+    "platform": "Cookiebot"
+  },
+  "scan": {
+    "status": "done",
+    "url": "https://bakery-example.de/",
+    "cookies": [
+      {
+        "name": "_ga",
+        "domain": ".shop-example.com",
+        "category": "analytics",
+        "platform": "Google Analytics",
+        "description": "ID used to identify users"
+      },
+      {
+        "name": "PHPSESSID",
+        "domain": "shop-example.com",
+        "category": null,
+        "platform": null,
+        "description": null
+      }
+    ]
+  }
+}
