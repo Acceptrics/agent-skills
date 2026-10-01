@@ -11,7 +11,12 @@ fixed through the Acceptrics API, with the owner's approval and a 24-hour key.
 New sites get a pre-filled setup link.
 
 Install by copying `acceptrics-compliance/` into your agent's skills folder
-(e.g. `~/.claude/skills/`).
+(e.g. `~/.claude/skills/`). Overview, example report and one-line install:
+https://acceptrics.com/ai-compliance-skill
+
+Cookies the library doesn't recognise come back as `functional` with
+`unrecognised: true`, and the report names each one so the owner can check what
+sets it.
 
 It uses:
 - `POST /v1/public/scans` on api.acceptrics.com: public, no account needed;
