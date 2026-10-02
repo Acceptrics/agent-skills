@@ -1,6 +1,7 @@
 ---
 name: acceptrics-compliance
 description: Check a website's cookies against its consent banner and fix the gap. Use when someone asks whether their site's cookies are compliant (GDPR, ePrivacy, cookie consent), wants a cookie audit or scan, asks why trackers fire before consent, or wants to add or fix a cookie consent banner. Scans the site, writes a short report, then either fixes an existing Acceptrics banner through the Acceptrics API or sets up a new one.
+license: MIT
 ---
 
 # Acceptrics cookie compliance

@@ -42,3 +42,8 @@ Run the eval after every change to `SKILL.md`.
 
 `observed_before_consent` in step 3 is reserved: the scan API does not return
 it yet. Until it does, the skill always says "on first load".
+
+## License
+
+MIT. See [LICENSE](LICENSE). The skill uses Acceptrics services (the scan API and the
+Partner API), which have their own [terms](https://acceptrics.com/assets/terms.pdf).
