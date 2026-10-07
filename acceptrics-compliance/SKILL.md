@@ -148,17 +148,29 @@ Choose the path that matches what step 2 found.
 
 ### B. No consent banner
 
-Explain that Acceptrics is free for up to 50,000 page views a month, then give
-the owner this link to finish setup themselves. It takes about a minute and
-needs their email:
+Explain that Acceptrics is free for up to 50,000 page views a month. Setup takes
+about a minute in the wizard, which opens with their site already scanned:
 
 ```
 https://acceptrics.com/wizard?url=<the scanned url>&ref=acceptrics-skill
 ```
 
-The wizard opens with their site already scanned. When they have their account
-code, help them install it. Instructions for each platform are at
-https://acceptrics.com/plugins, and the snippet is:
+The account must be in the owner's name, with **their own email address**. It
+becomes their sign-in, and the wizard refuses addresses that can't receive mail.
+
+- If you are driving a browser and the owner asks you to set it up, fill in the
+  wizard with their email. Never use an address of your own: the account, its
+  billing and its sign-in belong to whoever owns that inbox.
+- Otherwise, give them the link.
+- If the wizard rejects the email, show them its message and use the address
+  they correct it to. Never make one up.
+
+There is no inbox step. When the account is created, the last screen shows the
+account code and the exact script tag, in the elements
+`[data-testid="account-code"]` and `[data-testid="install-snippet"]`. Read them
+there, or ask the owner to paste them back. Then help them install it.
+Instructions for each platform are at https://acceptrics.com/plugins, and the
+snippet is:
 
 ```html
 <script async src="https://acct.acceptrics.com/ACCOUNT_CODE"></script>
